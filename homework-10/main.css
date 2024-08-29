@@ -1,0 +1,13 @@
+body{
+    display: flex;
+    flex-direction: column;
+}
+#text{
+    background: red;
+}
+.hide{
+    visibility: hidden;
+}
+#bth{
+    position: relative;
+}
