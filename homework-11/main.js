@@ -46,7 +46,14 @@ fetch('https://dummyjson.com/recipes')
             for (const key in recipe) {
                 let info = document.createElement('p')
 
-                if (key !== 'ingredients') {
+                if( key === 'image'){
+
+                    let img = document.createElement('img');
+                    img.src = recipe[key]
+                    block.appendChild(img)
+                }
+
+                if (key !== 'ingredients' && key !== 'image') {
                     info.innerText = `${key} - ${recipe[key]}`
                 }
                 let p = document.createElement('p');
@@ -59,9 +66,7 @@ fetch('https://dummyjson.com/recipes')
                         let li = document.createElement('li');
                         li.innerText = ingredient
                         ol.appendChild(li)
-
                     })
-
                     block.append(p, ol)
                 }
                 block.append(info)
